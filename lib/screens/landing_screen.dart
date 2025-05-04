@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:uoajk_day5/screens/country_list_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -22,7 +23,11 @@ class LandingScreen extends StatelessWidget {
             child: ListTile(
               leading: Text('1'),
               title: Text('Countries Flag API'),
-              onTap: (){},
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return CountryListScreen();
+                }));
+              },
             ),
           ),
 
