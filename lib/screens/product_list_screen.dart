@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:uoajk_day5/models/product.dart';
 import 'package:http/http.dart' as http;
+import 'package:uoajk_day5/screens/product_detail_screen.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -60,22 +61,30 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
                   Product product = products[index];
 
-                  return Card(
-                    color: Colors.pink[100],
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CircleAvatar(
-                            radius: 60,
-                            backgroundImage: NetworkImage(product.thumbnail!),
-                          ),
+                  return InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return ProductDetailScreen(product: product);
+                      }));
+                    },
+                    child: Card(
 
-                          Text(product.title!),
-                          Text('Price: \$${product.price!.toString()}'),
+                      color: Colors.pink[100],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CircleAvatar(
+                              radius: 60,
+                              backgroundImage: NetworkImage(product.thumbnail!),
+                            ),
 
-                        ],
+                            Text(product.title!, maxLines: 2,),
+                            Text('Price: \$${product.price!.toString()}'),
+
+                          ],
+                        ),
                       ),
                     ),
                   );
