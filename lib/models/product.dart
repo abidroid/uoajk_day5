@@ -3,21 +3,21 @@ class Product {
   String? title;
   String? description;
   String? category;
-  double? price;
-  double? discountPercentage;
-  double? rating;
-  int? stock;
+  num? price;
+  num? discountPercentage;
+  num? rating;
+  num? stock;
   List<String>? tags;
   String? brand;
   String? sku;
-  int? weight;
+  num? weight;
   Dimensions? dimensions;
   String? warrantyInformation;
   String? shippingInformation;
   String? availabilityStatus;
   List<Reviews>? reviews;
   String? returnPolicy;
-  int? minimumOrderQuantity;
+  num? minimumOrderQuantity;
   Meta? meta;
   List<String>? images;
   String? thumbnail;
@@ -113,9 +113,9 @@ class Product {
 }
 
 class Dimensions {
-  double? width;
-  double? height;
-  double? depth;
+  num? width;
+  num? height;
+  num? depth;
 
   Dimensions({this.width, this.height, this.depth});
 
@@ -135,7 +135,7 @@ class Dimensions {
 }
 
 class Reviews {
-  int? rating;
+  num? rating;
   String? comment;
   String? date;
   String? reviewerName;

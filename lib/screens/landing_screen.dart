@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:uoajk_day5/screens/country_list_screen.dart';
+import 'package:uoajk_day5/screens/product_list_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -36,7 +37,11 @@ class LandingScreen extends StatelessWidget {
             child: ListTile(
               leading: Text('2'),
               title: Text('Products API'),
-              onTap: (){},
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return ProductListScreen();
+                }));
+              },
             ),
           ),
         ],
